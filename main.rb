@@ -5,10 +5,16 @@ html_data = open('https://ain.ua').read
 nokogiri_object = Nokogiri::HTML(html_data)
 elements = nokogiri_object.css('.block-interesting').css('.block-interesting-list')
 
+# connection to the database
 con = PG.connect 
 	:dbname 	=> '***', 
 	:user 		=> '***', 
   :password => '***'
+
+# create a database table
+con.exec "DROP TABLE IF EXISTS Posts"
+  con.exec "CREATE TABLE Posts(Id INTEGER PRIMARY KEY, 
+    Name VARCHAR(20), Views INT)"
 
 parsed = [] # array for parsed text
 count = 0
