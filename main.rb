@@ -30,3 +30,4 @@ while count < elements.css('.item-title').count
 		count += 1
 	end
 end
+
