@@ -20,13 +20,13 @@ parsed = [] # array for parsed text
 count = 0
 while count < elements.css('.item-title').count
 	elements.each do |element|
-		parsed << count+1 # post id
+		parsed << count + 1 # post id
 		parsed << element.css('.item-title')[count].text # post name
 		parsed << element.css('.views')[count].text # post views
+
+		# add to database
+		con.exec "INSERT INTO Posts VALUES(parsed[0], parsed[1], parsed[2])"
 
 		count += 1
 	end
 end
-
-arr = []
-arr << parsed.each_slice(3) { |f| arr << f } # sample of individual posts
