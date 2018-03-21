@@ -1,1 +1,2 @@
-main.rb
+require 'pg'
+require 'nokogiri'
