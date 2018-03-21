@@ -7,14 +7,14 @@ elements = nokogiri_object.css('.block-interesting').css('.block-interesting-lis
 
 # connection to the database
 con = PG.connect 
-	:dbname 	=> '***', 
-	:user 		=> '***', 
-  :password => '***'
+  :dbname 	=> '***', 
+  :user 	=> '***', 
+  :password 	=> '***'
 
 # create a database table
 con.exec "DROP TABLE IF EXISTS Posts"
   con.exec "CREATE TABLE Posts(Id INTEGER PRIMARY KEY, 
-    Name VARCHAR(20), Views INT)"
+    Name VARCHAR(50), Views INT)"
 
 parsed = [] # array for parsed text
 count = 0
@@ -30,4 +30,3 @@ while count < elements.css('.item-title').count
 		count += 1
 	end
 end
-
