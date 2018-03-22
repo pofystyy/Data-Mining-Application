@@ -1,5 +1,6 @@
 require 'pg'
 require 'nokogiri'
+require 'open-uri'
 
 html_data = open('https://ain.ua').read
 nokogiri_object = Nokogiri::HTML(html_data)
