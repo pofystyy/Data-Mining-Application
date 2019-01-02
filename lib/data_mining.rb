@@ -8,8 +8,8 @@ module DataMining
       @storage = MongoStorage.new
     end
 
-    def parse(url, html_element)
-      @parser.parser(url, html_element)
+    def parse(url)
+      @parser.parser(url)
     end
 
     def to_db(*args)
