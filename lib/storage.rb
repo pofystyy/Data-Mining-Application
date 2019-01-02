@@ -4,7 +4,8 @@ require 'mongo'
 module DataMining
   class MongoStorage
     class Exceptions
-      class MongoConnectionFailure < DataMining::Exceptions::BaseException; end
+      class BaseMongoStorageExceptions < DataMining::Exceptions::BaseException; end
+      class MongoConnectionFailure < BaseMongoStorageExceptions; end
     end
     def initialize
       settings_line = ENV["SETTINGS_LINE"]
