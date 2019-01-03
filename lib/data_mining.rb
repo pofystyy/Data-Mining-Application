@@ -1,5 +1,5 @@
 require_relative 'parser'
-require_relative 'storage'
+require_relative 'mongo_storage'
 
 module DataMining
   class DataMining

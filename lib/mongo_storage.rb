@@ -9,8 +9,8 @@ module DataMining
     end
     def initialize
       settings_line = ENV["SETTINGS_LINE"]
-      database =  ENV["DATABASE"]
-      collection = ENV["COLLECTION"]
+      database      = ENV["DATABASE"]
+      collection    = ENV["COLLECTION"]
 
       @collection = collection.to_sym unless collection.nil?
 
